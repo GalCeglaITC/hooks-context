@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import CheckBoxFC from "./components/CheckBoxFC";
+import { Divider, Typography } from "@mui/material";
+import CheckBoxClass from "./components/CheckBoxClass";
+import { AppContext } from "./context/context";
+import { useState } from "react";
+import Counter from "./components/Counter";
 
 function App() {
+  const [toggleCount, setToggleCount] = useState(0);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContext.Provider
+      value={{ toggleCount: toggleCount, setToggleCount: setToggleCount }}
+    >
+      <div className="App">
+        <Counter />
+        <CheckBoxFC />
+        <Typography variant="body1">Function Component</Typography>
+        <Divider />
+        <CheckBoxClass />
+        <Typography variant="body1">Class Component</Typography>
+      </div>
+    </AppContext.Provider>
   );
 }
 
