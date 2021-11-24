@@ -10,4 +10,8 @@ PLEASE feel free to clone this repo and play around with it!
 
 ## Clone and Start!
 
+### `yarn`
+
+And then
+
 ### `yarn start`
